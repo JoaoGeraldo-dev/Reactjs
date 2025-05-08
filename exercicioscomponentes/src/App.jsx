@@ -1,5 +1,6 @@
 import Exemplo1 from "./componentes/Exemplo1"
 import Exercicio1 from "./componentes/Exercicio1"
+import Exercicio2 from "./componentes/exercicio2"
 
 export default function App() {
   return (
@@ -16,6 +17,11 @@ export default function App() {
     <div>
       <h3>Exercicio 1</h3>
       <Exercicio1 temp={20}/> 
+      </div>
+
+      <div>
+      <h3>Exercicio 2</h3>
+      <Exercicio2 peso={50} altura={1.80}/> 
       </div>
     </>
 
