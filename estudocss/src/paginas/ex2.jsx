@@ -5,9 +5,9 @@ export default function Ex2()
 {
     return(
         <div>
-            <h2 style={{color: "red"}}>Exemplo CSS puro</h2>
+            <h2 className="titulo">Exemplo CSS puro</h2>
     
-          <p> Os estilos são aplicados diretamente nos elementos
+          <p> Os estilos são <span style={{color:"red", fontstyle:"italic"}}>aplicados diretamente</span> nos elementos
             do HTML que estão nos compontes do React
             </p>
         </div>
