@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1{
+    background-color: rgb(96, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;  
+  }
+
+  a{
+      color: blue;
+  }
+
+  .container{
+      width: 600px;
+      margin: 20px auto;
+      border: 1px solid rgb(96, 0, 0);
+      border-radius: 5px;  
+  }
