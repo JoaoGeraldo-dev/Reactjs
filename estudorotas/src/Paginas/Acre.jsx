@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function SantaCatarina() {
+export default function Acre() {
     return (
         <div>
-            <h1>Seja bem-vindo ao estado de Santa Catarina!</h1>
+            <h1>Seja bem-vindo ao estado de Acre!</h1>
 
             <p> 
-                <img src="SC.png" width={500} />
+                <img src="AC.png" width={500} />
             </p>
 
             <p>

@@ -1,20 +1,17 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function EspiritoSanto(){
-    return(
+export default function EspiritoSanto() {
+    return (
         <div>
-        <h1>Seja bem vindo ao Beto Carreiro</h1>
+            <h1>Seja bem-vindo ao estado de Espirito Santo!</h1>
 
-        <p>
-            <img src="/ES.png" width={500} />
-        </p>
+            <p> 
+                <img src="ES.png" width={500} />
+            </p>
 
-        <p>
-            <Link to ="/"> Voltar </Link>
-        </p>
-
-
-
-    </div>
+            <p>
+                <Link to="/">Voltar</Link>
+            </p>
+        </div>
     );
 }
