@@ -51,4 +51,22 @@ app.get("/alunos", (req, res) => {
 
 app.get("/alunos/:codigo", (req, res) => {
 
+    const {codigo} = req.params;
+
+    const sql = "SELECT * FROM alunos WHERE codigo = ?";
+
+    banco.query(sql, [codigo], (erro, resultados) =>{
+        if(erro) { 
+            console.log(erro);
+            return res.status(500).json({error: "Erro ao consulta aluno"});
+        }
+
+        if(resultaados.lenght === 0) {
+            return res.status(404).json({message: "Aluno não encontrado"})
+        }
+
+        return res.status(200).json(resultados[0]);
+
+    })
+
 });
