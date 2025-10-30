@@ -70,3 +70,57 @@ app.get("/alunos/:codigo", (req, res) => {
     })
 
 });
+
+app.post("/alunos", (req, res) =>{
+     const {nome, cidade, estado} = req.body;
+
+     const sql = "insert into alunos (nome, cidade, estado) values (?,?,?)";
+
+     banco.query(sql, [nome, cidade, estado], (erro, result) =>{
+         if(erro)
+         {
+            console.log(erro);
+            return res.status(500).json({error: "Erro ao cadastrar aluno"});
+         }
+         else
+         {
+             let mensagem = `Aluno ${nome} cadastro com sucesso com o codigo ${res}`;
+             console.log(mensagem);
+             return res.status(201).json({error: "Erro ao cadastrar aluno"});
+         }
+
+     });
+});
+
+
+app.put("/alunos/:id", (req, res) =>{
+    const { id } = req.params;
+    const {nome, cidade, estado} = req.body;
+
+    const sql = "UPDATE alunos SET nome = ?, cidade = ?, estado = ? WHERE codigo = ?";
+
+    banco.query(sql, [nome, cidade, estado, id], (erro, result) => {
+        if(erro){
+            console.log(erro);
+            return res.status(500),json({error: "Erro ao atualizar aluno"});
+        }
+
+        if(result.affectedRowns === 0) {
+            return res.status(404).json({message:"Aluno não encontrado"});
+        }
+        
+        if(result.affectedRows === 0){
+            return res.status(404).json({message: "Aluno não encontrado"})
+        }
+        return res.status(200).json({message: `Alunos com ID ${id} atualizado com sucesso`});
+
+
+    })
+});
+
+app.delete("/alunos/:id", (req, res) =>{
+
+});
+
+
+
